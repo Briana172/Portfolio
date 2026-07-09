@@ -1,0 +1,6 @@
+/* Extracted styles from the original single-file HTML */
+body {
+  min-height: max(884px, 100dvh);
+}
+
+/* Add any project-specific CSS overrides here */
