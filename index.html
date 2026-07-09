@@ -3,637 +3,318 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Briana's Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<title>Portfolio Structure</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-<script>
-tailwind.config = {
-darkMode:"class",
-theme:{
-extend:{
-colors:{
-primary:"#6b38d4",
-background:"#ffffff",
-surface:"#ffffff",
-"surface-container-low":"#eff4ff",
-"surface-container-lowest":"#ffffff",
-"surface-container":"#e6eeff",
-"surface-variant":"#d9e3f6",
-"on-surface":"#121c2a",
-"on-surface-variant":"#494454",
-outline:"#7b7486",
-"outline-variant":"#cbc3d7"
-},
-fontFamily:{
-display:["Plus Jakarta Sans"],
-body:["Plus Jakarta Sans"]
-}
-}
-}
-}
-</script>
-
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#444749",
+                        "inverse-primary": "#d0bcff",
+                        "surface-dim": "#d0dbed",
+                        "surface-container-low": "#eff4ff",
+                        "secondary": "#5c5f60",
+                        "primary-fixed": "#e9ddff",
+                        "error": "#ba1a1a",
+                        "primary": "#6b38d4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#23005c",
+                        "surface-bright": "#f8f9ff",
+                        "primary-container": "#8455ef",
+                        "on-error": "#ffffff",
+                        "on-surface": "#121c2a",
+                        "on-background": "#121c2a",
+                        "tertiary-fixed": "#ffdcbb",
+                        "secondary-fixed-dim": "#c5c6c8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#6d3bd7",
+                        "secondary-container": "#dee0e2",
+                        "on-surface-variant": "#494454",
+                        "on-primary-fixed-variant": "#5516be",
+                        "on-secondary-container": "#606365",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#cbc3d7",
+                        "surface-container": "#e6eeff",
+                        "tertiary-container": "#a76500",
+                        "surface-variant": "#d9e3f6",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-high": "#dee9fc",
+                        "surface": "#ffffff",
+                        "secondary-fixed": "#e1e2e4",
+                        "on-secondary-fixed": "#191c1e",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#d0bcff",
+                        "on-tertiary-fixed": "#2c1700",
+                        "background": "#ffffff",
+                        "inverse-surface": "#27313f",
+                        "tertiary": "#855000",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#673d00",
+                        "outline": "#7b7486",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-fixed-dim": "#ffb869"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "16px",
+                        "base": "4px",
+                        "md": "24px",
+                        "lg": "40px",
+                        "xs": "8px",
+                        "xl": "64px",
+                        "container-max": "1200px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "display-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-
-<body class="bg-background text-on-surface font-body overflow-x-hidden">
-
-<!-- ================= HEADER ================= -->
-
-<header class="fixed top-0 left-0 w-full h-16 bg-white/90 backdrop-blur-md shadow-sm z-50">
-
-<div class="max-w-6xl mx-auto h-full flex items-center justify-between px-6">
-
-<div class="flex items-center gap-2">
-
-<span class="material-symbols-outlined text-primary">
-account_circle
-</span>
-
-<h1 class="font-bold text-xl">
-Portfolio
-</h1>
-
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden selection:bg-[#8B5CF6] selection:text-white" data-mode="connect">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md text-primary font-headline-md text-headline-md fixed top-0 w-full z-50 shadow-sm transition-all duration-300 ease-in-out flex justify-between items-center px-sm md:px-lg h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[#8B5CF6]" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Portfolio</span>
 </div>
-
-<nav class="hidden md:flex gap-8">
-
-<a href="#about" class="text-primary font-bold">
-About
-</a>
-
-<a href="#work">
-Projects
-</a>
-
-<a href="#tools">
-Tools
-</a>
-
-<a href="#contact">
-Contact
-</a>
-
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-md">
+<a class="text-[#8B5CF6] font-bold border-b-2 border-[#8B5CF6] pb-1 hover:scale-105 transition-transform duration-200" href="#about">About</a>
+<a class="text-on-secondary-container hover:scale-105 transition-transform duration-200 pb-1 border-b-2 border-transparent hover:border-outline-variant" href="#work">Projects</a>
+<a class="text-on-secondary-container hover:scale-105 transition-transform duration-200 pb-1 border-b-2 border-transparent hover:border-outline-variant" href="#tools">Tools</a>
+<a class="text-on-secondary-container hover:scale-105 transition-transform duration-200 pb-1 border-b-2 border-transparent hover:border-outline-variant" href="#contact">Contact</a>
 </nav>
-
-</div>
-
 </header>
-
-<!-- ================= MAIN ================= -->
-
-<main class="pt-24 pb-20 px-6 max-w-6xl mx-auto">
-
-<!-- ================= ABOUT ================= -->
-
-<section
-id="about"
-class="grid md:grid-cols-2 gap-16 items-center bg-white rounded-3xl shadow-lg border border-gray-100 p-10">
-
-<div class="flex justify-center">
-
-<div class="relative">
-
-<div class="absolute inset-0 rounded-full bg-purple-300 blur-3xl opacity-30 scale-125"></div>
-
-<div class="relative w-64 h-64 rounded-full overflow-hidden border-8 border-white shadow-xl">
-
-<img
-src="images/pfp.png"
-alt="Briana Acima Itohan Okoawo"
-class="w-full h-full object-cover">
-
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-gutter max-w-container-max mx-auto flex flex-col gap-xl">
+<!-- About Section -->
+<section class="min-h-[618px] grid grid-cols-1 md:grid-cols-2 gap-xl items-center rounded-2xl bg-surface p-lg shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05),0_8px_10px_-6px_rgba(0,0,0,0.05)] border border-surface-container transition-transform duration-500 hover:-translate-y-1" id="about">
+<div class="relative flex justify-center items-center w-full aspect-square max-w-sm mx-auto order-1 md:order-1">
+<div class="absolute inset-0 bg-gradient-to-tr from-[#8B5CF6]/20 to-transparent rounded-full blur-3xl scale-125"></div>
+<img alt="Abstract background shape" class="absolute inset-0 w-full h-full object-cover opacity-80 blur-xl scale-110 rounded-full mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/AP1WRLvI30-w-UJvwm_mRKnlZcRDK1ccuOl0IhA230cwMnGvloDSwgYy9TT3USYsCa_XuzncU1IEm_M7KunGBd65bNIOqJoTsmDnEss4bto5XM332IP8KcHrm5O7_23Vo58oZbgtlCccCkFt_Re6FS6-8hyNEtNCeZODrFZqPWhsWUyTf24V3ievmlvkR169jDbyk9odVNSITRZLbskCN6dnefzppDUYqysAQtp8GM8W7p-fSan0NM1_R0g2nu4">
+<div class="relative w-56 h-56 md:w-72 md:h-72 rounded-full bg-surface-container-low border-8 border-white shadow-xl flex items-center justify-center overflow-hidden z-10">
+<img alt="Briana Acima Itohan Okoawo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl-JnTqilhEz8lfFn1ouOIffF_sq1OiMF9A-epYc1h6CNXEqwz6sHZwl_71F6HbBFnaopcTAeoiAwvtkwwSLSDPas7H-2EpFAHYSt3-iOo0sRkJCyQqEeyxWlbMx8L0mq-BtUbptFPqLeaau2YYeh0ibXxsC3QG08BTrqNOuFDf-abYILHCJhmODnnZZy36xVVVaNvlCJyzngHBkueM9oc_ynuwn28WSLDs1U3Dj3rYXLRauwk08ISDHqyoxp6z0L0XNHDcav6U4Q">
 </div>
-
 </div>
-
+<div class="flex flex-col justify-center items-start order-2 md:order-2">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-surface-container-lowest border border-surface-container rounded-full mb-sm shadow-sm">
+<span class="material-symbols-outlined text-[#8B5CF6] text-sm" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">About</span>
 </div>
-
-<div>
-
-<div class="inline-flex items-center gap-2 bg-purple-100 text-primary rounded-full px-4 py-2 mb-5">
-
-<span class="material-symbols-outlined">
-person
-</span>
-
-<span>
-About
-</span>
-
+<h1 class="font-display-mobile text-display-mobile md:font-display md:text-display text-on-surface mb-md">
+                    Briana Acima Itohan Okoawo
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-lg leading-relaxed">Hi my name is Briana i am 13 years old , i am a nigerian and a web developer in training. I enjoy web developing and hope to one day inspire others.</p>
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-8 py-3 rounded-full shadow-[0_4px_14px_0_rgba(139,92,246,0.39)] hover:scale-105 hover:shadow-[0_6px_20px_rgba(139,92,246,0.23)] transition-all duration-200">
+        View GitHub
+    </button>
 </div>
-
-<h2 class="text-5xl font-bold mb-6">
-
-Briana Acima Itohan Okoawo
-
-</h2>
-
-<p class="text-lg leading-8 text-gray-600 mb-8">
-
-Hi my name is Briana i am 13 years old , i am a nigerian and a web developer in training. I enjoy web developing and hope to one day inspire others.
-
-</p>
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="inline-block bg-[#8B5CF6] text-white px-8 py-3 rounded-full hover:scale-105 duration-300">
-
-View GitHub
-
-</a>
-
-</div>
-
 </section>
-
-<!-- ================= PROJECTS ================= -->
-
-<section
-id="work"
-class="mt-24">
-
-<div class="inline-flex items-center gap-2 bg-purple-100 text-primary rounded-full px-4 py-2 mb-8">
-
-<span class="material-symbols-outlined">
-
-folder_open
-
-</span>
-
-Projects
-
+<!-- Work Section -->
+<section class="min-h-[618px] flex flex-col pt-lg pb-xl" id="work">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-surface-container rounded-full mb-md w-fit">
+<span class="material-symbols-outlined text-[#8B5CF6] text-sm" data-icon="folder_open">folder_open</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Work</span>
 </div>
-
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-<!-- ================= CARD 1 ================= -->
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-
-<img
-src="images/food-picker.png"
-alt="Random Food Picker"
-class="w-full h-52 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">
-
-Random Food Picker
-
-</h3>
-
-<p class="text-gray-600 mb-6">
-
-Randomly selects a meal from a custom list and displays cooking instructions.
-
-</p>
-<div class="flex gap-3">
-
-<a
-href="https://brifoodpick.vercel.app/"
-target="_blank"
-class="flex-1 text-center bg-[#8B5CF6] text-white py-3 rounded-full hover:scale-105 duration-300">
-
-Live Site
-
-</a>
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="flex-1 text-center border border-gray-300 py-3 rounded-full hover:bg-gray-100 duration-300">
-
-GitHub
-
-</a>
-
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Card 1 -->
+<div class="flex flex-col bg-surface-container-low rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-container overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="Random Food Picker" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWJdJM2VVCsekPMXjBIAF8mD-_IfDaaRHZ_-0CIAIRX4CcJLIMBsrjTG3WdtzoAgGR_LcP9yEBUgDpSk9q32zPqru9XBCE4PMWUigcnDTv3LJdglULiKCkLBJZrINfWFLTWkLE9Iol4yI-q2fzjC1OCGaZP6dEUGd_sZS2x73QnEYMJqY7AOuYx62KpbhVkbqOtMOLwukHU0-m57k5bMrE0YtafooJJsgHUm79Cj1Z79KmJ0rQhcamr6auukdyb-foW89cUGqAX10">
 </div>
-
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Random Food Picker</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">Randomly selects a meal from a custom list and displays cooking instructions.</p>
+<div class="flex gap-3 mt-auto">
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-5 py-2 rounded-full shadow-sm hover:bg-[#7c4dec] transition-colors flex-1">Live Site</button>
+<button class="font-label-md text-label-md bg-transparent border border-outline text-on-surface px-5 py-2 rounded-full hover:bg-surface-container transition-colors flex-1">GitHub</button>
 </div>
-
 </div>
-
-<!-- ================= CARD 2 ================= -->
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-
-<img
-src="images/about-me.png"
-alt="About Me Page"
-class="w-full h-52 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">
-
-About Me Page
-
-</h3>
-
-<p class="text-gray-600 mb-6">
-
-A personal webpage introducing myself using HTML and CSS.
-
-</p>
-
-<div class="flex gap-3">
-
-<a
-href="https://aboutdisgrl.vercel.app/"
-target="_blank"
-class="flex-1 text-center bg-[#8B5CF6] text-white py-3 rounded-full hover:scale-105 duration-300">
-
-Live Site
-
-</a>
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="flex-1 text-center border border-gray-300 py-3 rounded-full hover:bg-gray-100 duration-300">
-
-GitHub
-
-</a>
-
 </div>
-
+<!-- Card 2 -->
+<div class="flex flex-col bg-surface-container-low rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-container overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="About Me Page" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe-Ypj5mWVSuSasVzRvFTaYlXdlZfNPHqU8D30QlAQh-T5XIujTxwvnpOr7u2-Lvqv15fnABUAnEsCjME5b165zU-BvklGO8rtP_tq6k_OXx7rZGSsPS-kr5IXi6YuG0C-7SBSK-LaLxOedYkVOyW8IVUONN8C0F4OPTguecTS8itONkpK8otFNvc-cZW-6x5puf_TTNRNKewdRNqeB0tN9tZn5ghcb1JyrHYYgELX7nKJizeQslkFo5WPTHmRsOUp_1jeVG_jPOA">
 </div>
-
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">About Me Page</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">A personal webpage introducing myself using HTML and CSS.</p>
+<div class="flex gap-3 mt-auto">
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-5 py-2 rounded-full shadow-sm hover:bg-[#7c4dec] transition-colors flex-1">Live Site</button>
+<button class="font-label-md text-label-md bg-transparent border border-outline text-on-surface px-5 py-2 rounded-full hover:bg-surface-container transition-colors flex-1">GitHub</button>
 </div>
-
-<!-- ================= CARD 3 ================= -->
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-
-<img
-src="images/password-generator.png"
-alt="Password Generator"
-class="w-full h-52 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">
-
-Password Strength Generator
-
-</h3>
-
-<p class="text-gray-600 mb-6">
-
-Checks password strength and generates secure passwords.
-
-</p>
-
-<div class="flex gap-3">
-
-<a
-href="https://bripasswordchecker.vercel.app/"
-target="_blank"
-class="flex-1 text-center bg-[#8B5CF6] text-white py-3 rounded-full hover:scale-105 duration-300">
-
-Live Site
-
-</a>
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="flex-1 text-center border border-gray-300 py-3 rounded-full hover:bg-gray-100 duration-300">
-
-GitHub
-
-</a>
-
 </div>
-
 </div>
-
+<!-- Card 3 -->
+<div class="flex flex-col bg-surface-container-low rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-container overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="Password Strength Generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMnMU7EE5Q85zHjFq7dRI85ROYf_-bS6xPKV-8SFg0FnprzOQuyy-vKJoxlYyBQIMWNGaDoLJNro-zY0Msl19oLKcSkhj_3dcPaD4lR2yRc09TM7NWYLGLkYrGqRTarD8XbQzYTnXnekN_w-r5dKf4ISjsqrqq-oGgW-vLelHMc1xSMAUKaE_ptgDfyu83L-I7AwsCL99eVjXr39TGYmbRFA0UX3WjrNLAV_4cCYvvnCJP0nle7WRjQ5A1LbWa9HrKQ6rHn2Lz4HE">
 </div>
-
-<!-- ================= CARD 4 ================= -->
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-
-<img
-src="images/countdown.png"
-alt="Countdown App"
-class="w-full h-52 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">
-
-Countdown App
-
-</h3>
-
-<p class="text-gray-600 mb-6">
-
-Creates real-time countdown timers for important events.
-
-</p>
-
-<div class="flex gap-3">
-
-<a
-href="#"
-class="flex-1 text-center bg-[#8B5CF6] text-white py-3 rounded-full">
-
-Live Site
-
-</a>
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="flex-1 text-center border border-gray-300 py-3 rounded-full">
-
-GitHub
-
-</a>
-
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Password Strength Generator</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">Checks password strength and generates secure passwords.</p>
+<div class="flex gap-3 mt-auto">
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-5 py-2 rounded-full shadow-sm hover:bg-[#7c4dec] transition-colors flex-1">Live Site</button>
+<button class="font-label-md text-label-md bg-transparent border border-outline text-on-surface px-5 py-2 rounded-full hover:bg-surface-container transition-colors flex-1">GitHub</button>
 </div>
-
 </div>
-
 </div>
-
-<!-- ================= CARD 5 ================= -->
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-
-<img
-src="images/showswipe.png"
-alt="ShowSwipe"
-class="w-full h-52 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">
-
-ShowSwipe
-
-</h3>
-
-<p class="text-gray-600 mb-6">
-
-Swipe through TV shows and receive personalized recommendations using the TVMaze API.
-
-</p>
-
-<div class="flex gap-3">
-
-<a
-href="https://swipie.vercel.app/"
-target="_blank"
-class="flex-1 text-center bg-[#8B5CF6] text-white py-3 rounded-full hover:scale-105 duration-300">
-
-Live Site
-
-</a>
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="flex-1 text-center border border-gray-300 py-3 rounded-full hover:bg-gray-100 duration-300">
-
-GitHub
-
-</a>
-
+<!-- Card 4 -->
+<div class="flex flex-col bg-surface-container-low rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-container overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="Countdown App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbSEE3c0a8fYzJAcGXuSHPAQ7aBiPsl6zxQVWnzyl-B0eCPtTbXpwKMSWwKPpp-n0-oDqDJTVLXY8l4qaa8zuGLCBCqBYUChJKcy_9ie_yRgSc3AdUU4bGRlVhlT5jEkslltUFLWJRYNHUhcANUZ3PEfsQDjjob6gYl3rqhECDmX5SN9Y52WbZLZJpi-kAidduLsm6Wvg4umIqcpebFkfgeW5wjEThtegd13bBtzBnXXg7jsraxverKtbI-1uXIvnY71Jy_r6dJUk">
 </div>
-
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Countdown App</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">Creates real-time countdown timers for important events.</p>
+<div class="flex gap-3 mt-auto">
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-5 py-2 rounded-full shadow-sm hover:bg-[#7c4dec] transition-colors flex-1">Live Site</button>
+<button class="font-label-md text-label-md bg-transparent border border-outline text-on-surface px-5 py-2 rounded-full hover:bg-surface-container transition-colors flex-1">GitHub</button>
 </div>
-
 </div>
-<!-- ================= CARD 6 ================= -->
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-
-<img
-src="images/project5.png"
-alt="Project 5"
-class="w-full h-52 object-cover">
-
-<div class="p-6">
-
-<h3 class="text-xl font-bold mb-2">
-
-Project 5
-
-</h3>
-
-<p class="text-gray-600 mb-6">
-
-A web application built using HTML, CSS and JavaScript.
-
-</p>
-
-<div class="flex gap-3">
-
-<a
-href="#"
-class="flex-1 text-center bg-[#8B5CF6] text-white py-3 rounded-full">
-
-Live Site
-
-</a>
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="flex-1 text-center border border-gray-300 py-3 rounded-full">
-
-GitHub
-
-</a>
-
 </div>
-
+<!-- Card 5 -->
+<div class="flex flex-col bg-surface-container-low rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-container overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="ShowSwipe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTHU7oW3TMEo9MvB_BlslDKmpq5Df-7_L2-SEZRAwhhxSLJKt7NKru46lZBMopo3VfLXhEHyWseY7O5oe5Upws6WleBixo0ODLQGU2cz7V3CQ2MspgObreOdWIULXZF9qFpf1oPAnZw7kAIDjBr4pel_IjGpUnFQBJ_4DS3Mz9cAsqoHZWdgABJqk9D8ufkA7bkfKH0d0ri2P-r6z3rjVjNtO-vXGYcWA9bnF68EwEs82TIbGZvp1oqnGRjGTnQh02RFXioPqSgks">
 </div>
-
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">ShowSwipe</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">Swipe through TV shows and receive personalized recommendations using the TVMaze API.</p>
+<div class="flex gap-3 mt-auto">
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-5 py-2 rounded-full shadow-sm hover:bg-[#7c4dec] transition-colors flex-1">Live Site</button>
+<button class="font-label-md text-label-md bg-transparent border border-outline text-on-surface px-5 py-2 rounded-full hover:bg-surface-container transition-colors flex-1">GitHub</button>
 </div>
-
 </div>
-
+</div>
+<!-- Card 6 -->
+<div class="flex flex-col bg-surface-container-low rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-container overflow-hidden group">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img alt="AI Fashion Stylist" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJFFsnEoNZC3lVq5wDrrT1vjr_KMQWUXegk6HNPR7ZiSqQgQ_g4ISyla2huVARNCl1X9sQYUd7I5G3l9MoSwb0XonsVOOFSctLifcUZuETOyMQLJ20OYsf-pK-bATYdhYLof8V5_RPQt1RJxN57c6KI878Ed5xmQMcbeYB6p948IG4bNp5HZvXb515H1uP5M4eInCFFKzgNiybQ14NxA_vbySRvgaG2CHDy1eiSe3IOeTwpyG5xXrq57AaqJutVKCN-FdWGo-UOV0">
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">AI Fashion Stylist</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-1">An AI-powered fashion assistant that helps users discover outfit ideas and styling inspiration.</p>
+<div class="flex gap-3 mt-auto">
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-5 py-2 rounded-full shadow-sm hover:bg-[#7c4dec] transition-colors flex-1">Live Site</button>
+<button class="font-label-md text-label-md bg-transparent border border-outline text-on-surface px-5 py-2 rounded-full hover:bg-surface-container transition-colors flex-1">GitHub</button>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ================= TOOLS ================= -->
-
-<section
-id="tools"
-class="mt-24">
-
-<div class="inline-flex items-center gap-2 bg-purple-100 text-primary rounded-full px-4 py-2 mb-8">
-
-<span class="material-symbols-outlined">
-
-handyman
-
-</span>
-
-Tools & Skills
-
+<!-- Tools Section -->
+<section class="min-h-[530px] flex flex-col justify-center rounded-2xl bg-surface-container-low p-lg border border-surface-container" id="tools">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest border border-surface-container rounded-full mb-lg w-fit">
+<span class="material-symbols-outlined text-[#8B5CF6] text-sm" data-icon="handyman">handyman</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tools &amp; Skills</span>
 </div>
-
-<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">🌐</div>
-<p class="font-semibold">HTML</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="code">code</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">HTML</span>
 </div>
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">🎨</div>
-<p class="font-semibold">CSS</p>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="css">css</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">CSS</span>
 </div>
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">⚡</div>
-<p class="font-semibold">JavaScript</p>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="javascript">javascript</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">JavaScript</span>
 </div>
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">💻</div>
-<p class="font-semibold">VS Code</p>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="integration_instructions">integration_instructions</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">VS Code</span>
 </div>
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">🐙</div>
-<p class="font-semibold">GitHub</p>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="terminal">terminal</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">GitHub</span>
 </div>
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">▲</div>
-<p class="font-semibold">Vercel</p>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="cloud">cloud</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Vercel</span>
 </div>
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">✨</div>
-<p class="font-semibold">Google Stitch</p>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="api">api</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Google Stitch</span>
 </div>
-
-<div class="bg-white rounded-2xl shadow p-6 text-center">
-<div class="text-5xl mb-3">🎯</div>
-<p class="font-semibold">Figma</p>
+<div class="flex flex-col items-center justify-center p-6 bg-surface-container-lowest border border-surface-container rounded-xl shadow-sm hover:shadow-md transition-shadow gap-3 text-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="design_services">design_services</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Figma</span>
 </div>
-
 </div>
-
 </section>
-
-<!-- ================= CONTACT ================= -->
-
-<section
-id="contact"
-class="mt-24 text-center">
-
-<div class="inline-flex items-center gap-2 bg-purple-100 text-primary rounded-full px-4 py-2 mb-8">
-
-<span class="material-symbols-outlined">
-
-mail
-
-</span>
-
-Contact
-
+<!-- Contact Section -->
+<section class="min-h-[442px] flex flex-col justify-center items-center text-center pt-xl pb-lg" id="contact">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface border border-surface-container rounded-full mb-md">
+<span class="material-symbols-outlined text-[#8B5CF6] text-sm" data-icon="mail">mail</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Contact</span>
 </div>
-
-<h2 class="text-4xl font-bold mb-4">
-
-Let's build something.
-
-</h2>
-
-<p class="text-gray-600 mb-10">
-
-Feel free to reach out for collaborations or just a friendly hello!
-
-</p>
-
-<div class="flex flex-col md:flex-row justify-center gap-6 mb-10">
-
-<div class="bg-white shadow rounded-xl px-6 py-4">
-
-📧 briana@sevenkidscodefoundation.org
-
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Let's build something.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-md">
+                Feel free to reach out for collaborations or just a friendly hello!
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-lg w-full max-w-md justify-center">
+<div class="flex items-center gap-3 bg-surface-container-low px-5 py-3 rounded-xl border border-surface-container">
+<span class="material-symbols-outlined text-[#8B5CF6]" data-icon="email">email</span>
+<span class="font-label-md text-on-surface"><span style="color: rgb(31, 31, 31); font-family: &quot;Google Sans&quot;, Roboto; font-size: 14px; background-color: rgb(233, 238, 246);" class="">briana@sevenkidscodefoundation.org</span></span>
 </div>
-
-<div class="bg-white shadow rounded-xl px-6 py-4">
-
-📱 +233 30 222 8688
-
+<div class="flex items-center gap-3 bg-surface-container-low px-5 py-3 rounded-xl border border-surface-container">
+<span class="material-symbols-outlined text-[#8B5CF6]" data-icon="chat">chat</span>
+<span class="font-label-md text-on-surface">+233 30 222 8688</span>
 </div>
-
 </div>
-
-<a
-href="mailto:briana@sevenkidscodefoundation.org"
-class="inline-block bg-[#8B5CF6] text-white px-8 py-3 rounded-full hover:scale-105 duration-300">
-
-Contact Me
-
-</a>
-
+<button class="font-label-md text-label-md bg-[#8B5CF6] text-white px-lg py-3 rounded-full shadow-[0_4px_14px_0_rgba(139,92,246,0.39)] hover:scale-105 hover:shadow-[0_6px_20px_rgba(139,92,246,0.23)] transition-all duration-200">
+                Contact Me
+            </button>
 </section>
-
 </main>
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="mt-24 border-t py-10 text-center">
-
-<p class="font-bold">
-
-Built by ✨ Briana Acima Itohan Okoawo ✨, 2026
-
-</p>
-
-<div class="flex justify-center gap-6 mt-6">
-
-<a
-href="https://github.com/Briana172"
-target="_blank"
-class="text-[#8B5CF6] font-semibold">
-
-GitHub
-
-</a>
-
-<a
-href="https://aboutdisgrl.vercel.app/"
-target="_blank"
-class="text-[#8B5CF6] font-semibold">
-
-About Me
-
-</a>
-
-<a
-href="https://swipie.vercel.app/"
-target="_blank"
-class="text-[#8B5CF6] font-semibold">
-
-ShowSwipe
-
-</a>
-
+<!-- Footer -->
+<footer class="w-full py-lg mt-xl bg-surface-container-lowest flex flex-col justify-center items-center px-sm md:px-lg border-t border-outline-variant font-body-md text-body-md text-center gap-4">
+<div class="font-label-md text-label-md font-black text-on-surface">
+            Built by ✨ Briana Acima Itohan Okoawo ✨, 2026
+        </div>
+<div class="flex gap-md justify-center mt-2">
+<a class="text-on-surface-variant hover:text-[#8B5CF6] transition-colors opacity-80 hover:opacity-100" href="#"><br></a>
+<a class="text-on-surface-variant hover:text-[#8B5CF6] transition-colors opacity-80 hover:opacity-100" href="#"><br></a>
+<a class="text-on-surface-variant hover:text-[#8B5CF6] transition-colors opacity-80 hover:opacity-100" href="#"><br></a>
 </div>
-
 </footer>
 
-<script src="script.js"></script>
 
+
+<script src="script.js" defer></script>
 </body>
-
-</html>
